@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import '../../resources/static/todo.css'
+import '../../resources/static/css/todo.css'
 
 export default class ToDo extends Component {
     render() {

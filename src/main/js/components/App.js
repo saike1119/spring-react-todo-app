@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import '../../resources/static/app.css'
+import styles from '../../resources/static/css/app.css'
 import TodoList from './TodoList'
 
 export default class App extends Component {
@@ -25,7 +25,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div className="app">
+            <div className={styles.app}>
                 <h1>todoアプリを作ってみた</h1>
                 <TodoList
                     todos={this.state.todos}
