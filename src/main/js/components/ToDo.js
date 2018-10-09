@@ -1,17 +1,23 @@
 import React, {Component} from 'react'
-import '../../resources/static/css/todo.css'
+import Styles from '../../resources/static/css/todo.css'
 
-export default class ToDo extends Component {
+class ToDo extends Component {
     render() {
-        const className = 'undone'
-        const link = this.props.done ? '元に戻す' : '完了！'
+        const className = this.props.done ? 'done' : 'undone';
+        const link = this.props.done ? '元に戻す' : '完了！';
+        console.log(this.props);
         return (
-            <li className={className}>
+            <li className={Styles.undone}>
                 <span>{this.props.id}</span>
-                <span>：{this.props.title}</span>
-                <a href="">{link}</a>
-                <p>{this.props.desc}</p>
+                <span>：{this.props.title}</span>;
+                <a href="" onClick={(e) => {
+                    e.preventDefault();
+                    this.props.setTodoStatus(this.props)
+                }}>{link}</a>
+                <p>{this.props.desc}</p>;
             </li>
-        );
+    )
     }
 }
+
+export default ToDo

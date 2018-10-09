@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import ToDo from './ToDo'
 
-export default class ToDoList extends Component {
+class ToDoList extends Component {
     render() {
         const todos = this.props.todos.map(todo =>
             <ToDo
                 key={todo.id}
                 {...todo}
+                setTodoStatus={this.props.setTodoStatus}
             />
         );
         return (
@@ -17,3 +18,4 @@ export default class ToDoList extends Component {
     }
 }
 
+export default ToDoList
